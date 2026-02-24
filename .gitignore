@@ -1,0 +1,31 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+config/db.local.php
+config/mpesa.local.php
+
+# Logs / runtime
+*.log
+*.tmp
+*.cache
+php_errors.log
+error_log
+
+# Dependencies / build artifacts
+vendor/
+node_modules/
+dist/
+build/
+
+# Archives
+*.zip
+*.tar
+*.gz
+

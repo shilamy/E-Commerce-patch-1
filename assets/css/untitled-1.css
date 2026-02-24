@@ -1,0 +1,174 @@
+:root {
+            --primary: #0B0055;
+            --primary-light: #2a1c72;
+            --secondary: #f97316;
+            --secondary-light: #fdba74;
+            --accent: #10b981;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --text: #334155;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            background-color: #fefefe;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+        
+        .hero-gradient-2 {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+        }
+        
+        .hero-gradient-3 {
+            background: linear-gradient(135deg, var(--accent) 0%, #34d399 100%);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .card-img-top {
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            border-radius: 8px;
+            padding: 10px 24px;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary-light);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            border-radius: 8px;
+            padding: 10px 24px;
+            font-weight: 600;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .price-tag {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .sale-price {
+            color: var(--secondary);
+            text-decoration: line-through;
+            font-size: 0.9rem;
+            margin-left: 8px;
+        }
+        
+        .swiper-pagination-bullet {
+            background-color: white;
+            opacity: 0.7;
+            width: 10px;
+            height: 10px;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background-color: var(--accent);
+            opacity: 1;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .category-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .rating {
+            color: #fbbf24;
+            font-size: 0.9rem;
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .hero-content {
+            color: white;
+        }
+        
+        .hero-content h2 {
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero-image {
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+        }

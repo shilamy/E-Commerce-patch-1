@@ -1,0 +1,155 @@
+.auth-wireframe {
+  min-height: 100vh;
+  background: var(--wf-indigo);
+  color: var(--wf-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+}
+
+.auth-panel {
+  width: min(100%, 430px);
+  background: transparent;
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.auth-brand {
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.auth-title {
+  text-align: center;
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: #c2bdd6;
+  margin-bottom: 1.5rem;
+}
+
+.auth-error {
+  border: 1px solid #ff8ca2;
+  background: rgba(255, 92, 122, 0.12);
+  color: #ffd9e0;
+  border-radius: 10px;
+  padding: 0.65rem 0.8rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.88rem;
+}
+
+.auth-field {
+  margin-bottom: 0.75rem;
+}
+
+.auth-input-wrap {
+  position: relative;
+}
+
+.auth-input-wrap i {
+  position: absolute;
+  top: 50%;
+  left: 0.8rem;
+  transform: translateY(-50%);
+  color: #a4a0bd;
+}
+
+.auth-input {
+  width: 100%;
+  border: 1px solid #504976;
+  border-radius: 8px;
+  background: #f1f3f8;
+  color: #1e1a34;
+  font-size: 0.95rem;
+  padding: 0.8rem 0.9rem 0.8rem 2.35rem;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #fd7a00;
+  box-shadow: 0 0 0 3px rgba(253, 122, 0, 0.2);
+}
+
+.auth-btn {
+  width: 100%;
+  margin-top: 0.55rem;
+  border: 0;
+  border-radius: 8px;
+  background: #fd7000;
+  color: #fff;
+  font-weight: 800;
+  padding: 0.88rem;
+}
+
+.auth-btn:hover {
+  background: #e86700;
+}
+
+.auth-divider {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  color: #7f78a0;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #574f7e;
+}
+
+.auth-divider span {
+  padding: 0 0.7rem;
+}
+
+.auth-social {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.auth-social-btn {
+  border: 1px solid #6f6895;
+  border-radius: 8px;
+  color: #d7d2eb;
+  background: transparent;
+  padding: 0.72rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.auth-meta {
+  margin-top: 1rem;
+  text-align: center;
+  color: #8a84ab;
+  font-size: 0.9rem;
+}
+
+.auth-meta a {
+  color: #3cc4ff;
+  font-weight: 700;
+}
+
+@media (max-width: 420px) {
+  .auth-title {
+    font-size: 1.6rem;
+  }
+
+  .auth-panel {
+    padding: 0.2rem;
+  }
+}

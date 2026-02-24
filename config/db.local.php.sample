@@ -1,0 +1,11 @@
+<?php
+// Copy this file to config/db.local.php and set your local DB credentials.
+// This file is loaded by config/db.php and overrides defaults.
+return [
+    'host' => '127.0.0.1',
+    'port' => '3306',
+    'name' => 'ecommerce_db',
+    'user' => 'root',
+    'pass' => '',
+];
+
