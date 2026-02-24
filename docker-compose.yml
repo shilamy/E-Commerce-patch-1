@@ -1,0 +1,53 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecommerce-app
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:-ecommerce_db}
+      DB_USER: ${DB_USER:-ecommerce_user}
+      DB_PASS: ${DB_PASS:-ecommerce_pass}
+      MPESA_ENV: ${MPESA_ENV:-sandbox}
+      MPESA_CONSUMER_KEY: ${MPESA_CONSUMER_KEY:-}
+      MPESA_CONSUMER_SECRET: ${MPESA_CONSUMER_SECRET:-}
+      MPESA_SHORTCODE: ${MPESA_SHORTCODE:-}
+      MPESA_PASSKEY: ${MPESA_PASSKEY:-}
+      MPESA_CALLBACK_URL: ${MPESA_CALLBACK_URL:-}
+      MPESA_ACCOUNT_REF: ${MPESA_ACCOUNT_REF:-ECommerceOrder}
+      MPESA_TXN_DESC: ${MPESA_TXN_DESC:-Order payment}
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - app_uploads:/var/www/html/uploads
+
+  db:
+    image: mysql:8.0
+    container_name: ecommerce-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:-ecommerce_db}
+      MYSQL_USER: ${DB_USER:-ecommerce_user}
+      MYSQL_PASSWORD: ${DB_PASS:-ecommerce_pass}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS:-rootpass}
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./ecommerce_db.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u$$MYSQL_USER", "-p$$MYSQL_PASSWORD"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+volumes:
+  db_data:
+  app_uploads:

@@ -32,6 +32,25 @@ A minimal PHP e‑commerce scaffold to get you started quickly on XAMPP/WAMP.
 - This is a scaffold; wire up real product, cart, auth, and admin logic next.
 - Replace placeholder images under assets/images with real assets.
 
+## Docker Deployment
+
+1. Copy Docker env template:
+   - Windows (PowerShell): `Copy-Item .env.docker.example .env`
+   - macOS/Linux: `cp .env.docker.example .env`
+2. Build and start containers:
+   - `docker compose up --build -d`
+3. Open the app:
+   - `http://localhost:8080`
+4. MySQL is available on:
+   - Host: `127.0.0.1`
+   - Port: `3307`
+   - Database/user/password from `.env`
+
+Notes:
+- Database bootstrap SQL is mounted from `ecommerce_db.sql`.
+- Uploaded files persist via Docker volume `app_uploads`.
+- DB data persists via Docker volume `db_data`.
+
 ## Structure
 
 assets/

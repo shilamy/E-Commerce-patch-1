@@ -1,0 +1,13 @@
+.git
+.gitignore
+.vscode
+.idea
+node_modules
+vendor
+
+*.log
+*.tmp
+*.cache
+
+assets/images/E-commerce App Wireframe.zip
+assets/images/E-commerce App Wireframe/

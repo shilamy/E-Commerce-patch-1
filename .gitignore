@@ -3,29 +3,42 @@
 Thumbs.db
 .vscode/
 .idea/
+.history/
+*.swp
+*.swo
 
 # Environment / secrets
 .env
 .env.*
 !.env.example
+!.env.docker.example
 config/db.local.php
 config/mpesa.local.php
+.envrc
 
 # Logs / runtime
 *.log
 *.tmp
 *.cache
+*.pid
 php_errors.log
 error_log
+tmp/
+uploads/
 
 # Dependencies / build artifacts
 vendor/
 node_modules/
 dist/
 build/
+coverage/
+.phpunit.result.cache
 
 # Archives
 *.zip
 *.tar
 *.gz
 
+# Docker local overrides
+docker-compose.override.yml
+docker-compose.local.yml
